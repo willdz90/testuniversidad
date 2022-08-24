@@ -5,7 +5,6 @@ const { Profesor } = require("../db.js")
 
 router.use(cors());
 
-// router.use("/owners", ownersRoute);
 router.get("/", async (req, res, next) => {
     try {
         const allProfes = await Profesor.findAll();
