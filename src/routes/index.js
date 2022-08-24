@@ -10,7 +10,7 @@ router.get("/", async (req, res, next) => {
         const allProfes = await Profesor.findAll();
         res.send(allProfes);
     } catch (error) {
-        res.json(error)
+        res.json({ error })
     }
 })
 
@@ -21,7 +21,7 @@ router.post("/profes" , async (res, req, next) => {
         res.send(info);
 
     } catch (error) {
-        res.json(error)
+        res.json({ error })
     }
 })
 
