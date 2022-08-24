@@ -6,7 +6,7 @@ const { Profesor } = require("../db.js")
 router.use(cors());
 
 // router.use("/owners", ownersRoute);
-router.use("/", async (req, res, next) => {
+router.get("/", async (req, res, next) => {
     try {
         const allProfes = await Profesor.findAll();
         res.send(allProfes);
@@ -17,9 +17,9 @@ router.use("/", async (req, res, next) => {
 
 router.post("/profes" , async (res, req, next) => {
     try {
-        const body = req.body;
-        console.log(body)
-        res.send(body);
+        const info = req.body;
+        console.log(info)
+        res.send(info);
 
     } catch (error) {
         res.json(error)
